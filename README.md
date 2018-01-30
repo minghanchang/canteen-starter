@@ -1,6 +1,6 @@
-# Project Canteen - Austin (2nd Cohort)
+# Project Canteen Starter
 
-Canteen gift card project for the Visa NCG Enterprise Java course in Austin, TX
+Canteen gift card project for the Visa NCG Enterprise Java course.
 
 ## Participants
 
