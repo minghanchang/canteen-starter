@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.visa.ncg.canteen.exception.NoSuchAccountException;
 import com.visa.ncg.canteen.model.Account;
 import com.visa.ncg.canteen.model.AccountResponse;
 import com.visa.ncg.canteen.repository.AccountRepository;
@@ -19,6 +20,7 @@ public class AccountWebController {
 	@GetMapping("/account/{acctId}")
 	public String accountView(@PathVariable("acctId") Long accountId, Model model) {
 		Account acct = acctRepo.findById(accountId);
+		if(acct == null) throw new NoSuchAccountException();
 		AccountResponse acctRes = new AccountResponse(acct.getId(), acct.getBalance(), acct.name());
 		model.addAttribute("account", acctRes);
 		return "account-view";
