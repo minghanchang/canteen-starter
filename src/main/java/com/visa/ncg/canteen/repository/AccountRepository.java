@@ -13,7 +13,7 @@ import com.visa.ncg.canteen.model.Account;
 @Repository
 public class AccountRepository {
 	private List<Account> accountsRepo;
-	private AtomicLong orderIdGenerator = new AtomicLong(0);
+	private AtomicLong orderIdGenerator = new AtomicLong(1L);
 	
 	public AccountRepository() {
 		accountsRepo = new ArrayList<>();
@@ -25,7 +25,7 @@ public class AccountRepository {
 	
 	public void save(Account acct) {
 		if(acct.getId() == null) {
-			long orderId = orderIdGenerator.incrementAndGet();
+			long orderId = orderIdGenerator.getAndIncrement();
 			acct.setId(orderId);
 		}
 		accountsRepo.add(acct);

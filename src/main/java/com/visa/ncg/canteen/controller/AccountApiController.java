@@ -36,7 +36,7 @@ public class AccountApiController {
 	@RequestMapping(value = "/api/accounts/{acctId}", method = RequestMethod.GET)
 	public ResponseEntity<AccountResponse> accountInfo(@PathVariable("acctId") Long accountId) {
 		 Account acct = acctRepo.findById(accountId);
-		 AccountResponse acctRe = new AccountResponse(acct.getId(), acct.getBalance());
+		 AccountResponse acctRe = new AccountResponse(acct.getId(), acct.getBalance(), acct.name());
 		 return new ResponseEntity<>(acctRe, HttpStatus.OK);
 	}
 	

@@ -6,11 +6,21 @@ public class AccountResponse {
 	
 	private Long id;
 	private int balance;
+	private String name;
 
-    public AccountResponse(Long id, int balance) {
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public AccountResponse(Long id, int balance, String name) {
 		super();
 		this.id = id;
 		this.balance = balance;
+		this.name = name;
 	}
 
 	public Long getId() {

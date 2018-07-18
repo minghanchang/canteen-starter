@@ -5,8 +5,18 @@ import com.visa.ncg.canteen.InvalidAmountException;
 public class Account {
 	private Long id;
 	private int balance;
+	private String name;
 	
-    public Long getId() {
+	
+    public String name() {
+		return name;
+	}
+
+	public void changeNameTo(String name) {
+		this.name = name;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
