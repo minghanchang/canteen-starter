@@ -20,7 +20,9 @@ public class AccountWebController {
 	@GetMapping("/account/{acctId}")
 	public String accountView(@PathVariable("acctId") Long accountId, Model model) {
 		Account acct = acctRepo.findById(accountId);
-		if(acct == null) throw new NoSuchAccountException();
+		if(acct == null) {
+			throw new NoSuchAccountException();
+		}
 		AccountResponse acctRes = new AccountResponse(acct.getId(), acct.getBalance(), acct.name());
 		model.addAttribute("account", acctRes);
 		return "account-view";
