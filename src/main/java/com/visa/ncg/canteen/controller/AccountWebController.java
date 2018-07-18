@@ -1,5 +1,9 @@
 package com.visa.ncg.canteen.controller;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,5 +30,16 @@ public class AccountWebController {
 		AccountResponse acctRes = new AccountResponse(acct.getId(), acct.getBalance(), acct.name());
 		model.addAttribute("account", acctRes);
 		return "account-view";
+	}
+	
+	@GetMapping("/accounts")
+	public String browse(Model model) {
+		Collection<Account> accts = acctRepo.findAll();
+		List<AccountResponse> acctsRes = new ArrayList<>();
+		for(Account a : accts) {
+			acctsRes.add(new AccountResponse(a.getId(), a.getBalance(), a.name()));
+		}
+		model.addAttribute("accounts", acctsRes);
+		return "all-accounts";
 	}
 }
