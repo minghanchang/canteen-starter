@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.visa.ncg.canteen.model.Car;
 import com.visa.ncg.canteen.model.Part;
 
-@Service("svc2")
+//@Service("svc2")
 public class IService2Impl implements IService{
 	
 	@Override

@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +17,7 @@ import com.visa.ncg.canteen.service.IService;
 @Controller
 public class CarController {
 	@Autowired
+	//@Qualifier("svc2")
 	private IService svc;
 	
 	@GetMapping("/carindex.html")
