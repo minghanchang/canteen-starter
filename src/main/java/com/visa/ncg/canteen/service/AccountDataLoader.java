@@ -6,7 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import com.visa.ncg.canteen.model.Account;
-import com.visa.ncg.repository.AccountRepository;
+import com.visa.ncg.canteen.repository.AccountRepository;
 
 @Component
 public class AccountDataLoader implements ApplicationRunner {

@@ -1,10 +1,12 @@
 package com.visa.ncg.canteen.controller;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,5 +32,10 @@ public class CarController {
 	public ModelAndView browse() {
 		Collection<Car> cars = svc.getCars();
 		return new ModelAndView("browse", "carlist", cars);
+	}
+	
+	@ModelAttribute("date")
+	public Date getDate() {
+		return new Date();
 	}
 }

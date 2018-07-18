@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.visa.ncg.canteen.model.Account;
 import com.visa.ncg.canteen.model.AccountResponse;
-import com.visa.ncg.repository.AccountRepository;
+import com.visa.ncg.canteen.repository.AccountRepository;
 
 @RestController
 public class AccountApiController {

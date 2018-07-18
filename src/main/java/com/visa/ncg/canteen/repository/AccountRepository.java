@@ -1,4 +1,4 @@
-package com.visa.ncg.repository;
+package com.visa.ncg.canteen.repository;
 
 import java.util.ArrayList;
 import java.util.List;
