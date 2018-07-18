@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.visa.ncg.canteen.exception.NoSuchAccountException;
 import com.visa.ncg.canteen.model.Account;
@@ -42,4 +44,18 @@ public class AccountWebController {
 		model.addAttribute("accounts", acctsRes);
 		return "all-accounts";
 	}
+	
+	@PostMapping("/create-account")
+	public String createAccount(@ModelAttribute("accountName") String name) {
+		Account acct = new Account();
+		acct.changeNameTo(name);
+		acctRepo.save(acct);
+		return "redirect:/accounts";
+	}
+	
+	@GetMapping("/create-account")
+	public String createAccountForm() {
+		return "create-account";
+	}
+
 }
