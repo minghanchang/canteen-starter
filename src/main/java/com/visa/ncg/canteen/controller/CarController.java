@@ -28,10 +28,10 @@ public class CarController {
 		return "redirect:/carindex.html";
 	}
 	
-	@RequestMapping("/browse")
+	@RequestMapping("/carbrowse")
 	public ModelAndView browse() {
 		Collection<Car> cars = svc.getCars();
-		return new ModelAndView("browse", "carlist", cars);
+		return new ModelAndView("carbrowse", "carlist", cars);
 	}
 	
 	@ModelAttribute("date")

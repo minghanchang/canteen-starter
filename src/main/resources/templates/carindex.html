@@ -1,11 +1,10 @@
-<html xlmns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head><title>Welcome to cars</title></head>
 <body>
 <h1>The cars we currently have in stock: </h1>
 
    <h1>Select an option</h1>
    <a th:href = "@{/carbrowse}">Browse Cars</a>
-   <div th:include="footer :: content"/>
-</div>
+   <div th:include="footer :: content"></div>
 </body>
 </html>
