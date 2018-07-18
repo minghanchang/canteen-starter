@@ -1,4 +1,4 @@
 package com.visa.ncg.canteen;
 
-public class InvalidAmountException {
+public class InvalidAmountException extends Exception {
 }

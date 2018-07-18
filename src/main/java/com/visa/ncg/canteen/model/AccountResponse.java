@@ -2,11 +2,18 @@ package com.visa.ncg.canteen.model;
 
 import com.visa.ncg.canteen.InvalidAmountException;
 
-public class Account {
+public class AccountResponse {
+	
 	private Long id;
 	private int balance;
-	
-    public Long getId() {
+
+    public AccountResponse(Long id, int balance) {
+		super();
+		this.id = id;
+		this.balance = balance;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
@@ -34,6 +41,7 @@ public class Account {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+
 
 
 
